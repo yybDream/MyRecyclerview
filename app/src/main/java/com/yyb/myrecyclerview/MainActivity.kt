@@ -38,9 +38,10 @@ class MainActivity : AppCompatActivity() {
         }
         //添加分组悬浮效果
         val top = TopItemDecoration(this).apply {
-            this.typeListener = {
+            typeListener={
                 list[it].type.toString()
             }
+
         }
         rv_right.apply {
             adapter = rightAdapter

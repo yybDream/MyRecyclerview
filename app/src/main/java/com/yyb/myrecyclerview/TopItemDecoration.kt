@@ -28,9 +28,7 @@ class TopItemDecoration(context: Context) : RecyclerView.ItemDecoration() {
     private val textPaint: Paint = Paint(Paint.ANTI_ALIAS_FLAG)
     private val mContext: Context = context
     private val mRound: Rect = Rect()
-
-    override fun onDraw(c: Canvas, parent: RecyclerView, state: RecyclerView.State) {
-        super.onDraw(c, parent, state)
+    init {
         mPaint.apply {
             color = ContextCompat.getColor(mContext, R.color.colorPrimary)
         }
@@ -38,6 +36,9 @@ class TopItemDecoration(context: Context) : RecyclerView.ItemDecoration() {
             color = ContextCompat.getColor(mContext, R.color.colorAccent)
             textSize = 40f
         }
+    }
+    override fun onDraw(c: Canvas, parent: RecyclerView, state: RecyclerView.State) {
+        super.onDraw(c, parent, state)
         val left = parent.paddingLeft.toFloat()
         val right = (parent.width - parent.paddingRight).toFloat()
         val childCount = parent.childCount
