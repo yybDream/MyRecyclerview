@@ -77,7 +77,6 @@ class TopItemDecoration(context: Context) : RecyclerView.ItemDecoration() {
             var bottom = parent.paddingTop + mHeight.toFloat()
             //悬浮置顶判断，其实也就是一直在绘制一个矩形加文本内容(上滑时取值bottom，下滑时取值childView.bottom.toFloat())
             bottom = min(childView.bottom.toFloat(), bottom)
-            Log.e("只是",bottom.toString()+"     "+tag)
             c.drawRect(0f, top, right, bottom, mPaint)
             textPaint.getTextBounds(tag, 0, tag.length, mRound)
             c.drawText(tag, left + textPaint.textSize, bottom - mHeight / 2 + mRound.height() / 2, textPaint)
